@@ -13,16 +13,24 @@ Including another URLconf
     1. Add an import:  from blog import urls as blog_urls
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
+
+from django.conf.urls import patterns, include, url
+
+# Uncomment the next two lines to enable the admin:
+# from django.contrib import admin
+# admin.autodiscover()
+
+js_info_dict = {
+    'packages': ('mysite',),
+}
+
 from django.conf.urls import include, url
 from django.contrib import admin
-from mysite.views.dashboard import display_dashboard
-from mysite.views.login import display_login
-from mysite.views.register import display_register
 
 urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', display_dashboard, name='dashboard'),
-    url(r'^dashboard/', display_dashboard, name='dashboard'),
-    url(r'^login/', display_login, name='login'),
-    url(r'^register/', display_register, name='register'),
+    # url(r'^admin/', include(admin.site.urls)),
+    url(r'^$', 'mysite.apps.dashboard.views.display_dashboard'),
+    url(r'^dashboard/', 'mysite.apps.dashboard.views.display_dashboard'),
+    url(r'^login/?', include('mysite.apps.sessions.login.urls')),
+    url(r'^register/?', include('mysite.apps.sessions.register.urls')),
 ]

@@ -15,7 +15,7 @@ from django.template import Context
 from django.http import HttpResponse
 
 
-def display_login(request):
+def login(request):
 	context = Context({
 		'page_title': 'Zen | Login',
 		})
@@ -28,3 +28,7 @@ def display_login(request):
 	footer_t = get_template('footer.html')
 	footer_html = footer_t.render(context)
 	return HttpResponse(header_html + html + footer_html)
+
+
+def login_submit(request):
+	return HttpResponse('')

@@ -38,7 +38,7 @@
                         <a href="#">
                           <div class="pull-left">
                             <!-- User Image -->
-                            <img src="/static/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image"/>
+                            <img src="/static/dist/img/avatar5.png" class="img-circle" alt="User Image"/>
                           </div>
                           <!-- Message title and timestamp -->
                           <h4>
@@ -117,14 +117,14 @@
                 <!-- Menu Toggle Button -->
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <!-- The user image in the navbar-->
-                  <img src="/static/dist/img/user2-160x160.jpg" class="user-image" alt="User Image"/>
+                  <img src="/static/dist/img/avatar04.png" class="user-image" alt="User Image"/>
                   <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                  <span class="hidden-xs">Alexander Pierce</span>
+                  <span class="hidden-xs">Administrator</span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- The user image in the menu -->
                   <li class="user-header">
-                    <img src="/static/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
+                    <img src="/static/dist/img/avatar04.png" class="img-circle" alt="User Image" />
                     <p>
                       Alexander Pierce - Web Developer
                       <small>Member since Nov. 2012</small>
@@ -145,10 +145,13 @@
                   <!-- Menu Footer-->
                   <li class="user-footer">
                     <div class="pull-left">
-                      <a href="#" class="btn btn-default btn-flat">Profile</a>
+                      <a href="/register" class="btn btn-default btn-flat">Register</a>
                     </div>
                     <div class="pull-right">
                       <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                    </div>
+                    <div class="pull-right">
+                      <a href="/login" class="btn btn-default btn-flat">Sign In</a>
                     </div>
                   </li>
                 </ul>
@@ -170,10 +173,10 @@
           <!-- Sidebar user panel (optional) -->
           <div class="user-panel">
             <div class="pull-left image">
-              <img src="/static/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
+              <img src="/static/dist/img/avatar04.png" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
-              <p>Alexander Pierce</p>
+              <p>Administrator</p>
               <!-- Status -->
               <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
@@ -192,10 +195,9 @@
 
           <!-- Sidebar Menu -->
           <ul class="sidebar-menu">
-            <li class="header">HEADER</li>
+            <li class="header">Navigator</li>
             <!-- Optionally, you can add icons to the links -->
-            <li class="active"><a href="#"><i class='fa fa-link'></i> <span>Link</span></a></li>
-            <li><a href="#"><i class='fa fa-link'></i> <span>Another Link</span></a></li>
+            <li class="active"><a href="#" onclick="javascript: $(content_frame).src='http://idevops.net:10080/dashboard_no_nav.html'"><i class='fa fa-link'></i> <span>Eloancn</span></a></li>
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-pie-chart"></i>
@@ -239,7 +241,7 @@
         <section class="content"> 
 
           <div class="row">
-            <iframe class="col-lg-12 col-md-12 col-sm-12" src="http://idevops.net:10080/" width="100%" height="770px" frameborder="0" allowtransparency="true"></iframe>  
+            <iframe id="content_frame" class="col-lg-12 col-md-12 col-sm-12" src="http://idevops.net:10080/dashboard_no_nav.html" width="100%" height="770px" frameborder="0" allowtransparency="true"></iframe>  
           </div>
 
         </section><!-- /.content -->

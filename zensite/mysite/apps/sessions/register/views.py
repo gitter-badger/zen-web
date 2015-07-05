@@ -15,7 +15,7 @@ from django.template import Context
 from django.http import HttpResponse
 
 
-def display_register(request):
+def register(request):
 	context = Context({
 		'page_title': 'Zen | Register',
 		})
@@ -28,3 +28,15 @@ def display_register(request):
 	footer_t = get_template('footer.html')
 	footer_html = footer_t.render(context)
 	return HttpResponse(header_html + html + footer_html)
+
+
+def register_success(request):
+	return HttpResponse('')
+
+
+def register_submit(request):
+	return HttpResponse('')
+
+
+def register_confirm(request):
+	return HttpResponse('')
