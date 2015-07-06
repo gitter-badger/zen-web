@@ -1,4 +1,13 @@
-"""mysite URL Configuration
+#
+# Licensed Materials - Property of esse.io
+# 
+# (C) Copyright esse.io. 2015 All Rights Reserved
+#
+# Author: Bryan HUANG (bryan@esse.io)
+#
+#
+
+"""zensite URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.8/topics/http/urls/
@@ -21,7 +30,7 @@ from django.conf.urls import patterns, include, url
 # admin.autodiscover()
 
 js_info_dict = {
-    'packages': ('mysite',),
+    'packages': ('zensite',),
 }
 
 from django.conf.urls import include, url
@@ -29,8 +38,8 @@ from django.contrib import admin
 
 urlpatterns = [
     # url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', 'mysite.apps.dashboard.views.display_dashboard'),
-    url(r'^dashboard/', 'mysite.apps.dashboard.views.display_dashboard'),
-    url(r'^login/?', include('mysite.apps.sessions.login.urls')),
-    url(r'^register/?', include('mysite.apps.sessions.register.urls')),
+    url(r'^$', 'zensite.apps.dashboard.views.display_dashboard'),
+    url(r'^dashboard/', 'zensite.apps.dashboard.views.display_dashboard'),
+    url(r'^login/?', include('zensite.apps.sessions.login.urls')),
+    url(r'^register/?', include('zensite.apps.sessions.register.urls')),
 ]
