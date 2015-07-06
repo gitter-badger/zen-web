@@ -1,15 +1,16 @@
-Zen-web
-=========
+# Zen-web
+
 http://zen.esse.io
 
-Prerequisites
---------------
+## Prerequisites
 
-## Python
+### Python
 - Django 1.8.2
 - Coffin 0.3.8
 
-## JS
+### JS
 - Bootstrap 3
 - AdminLTE
 - D3js
+
+## HTML Templates
