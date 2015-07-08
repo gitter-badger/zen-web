@@ -6,3 +6,12 @@
 # Author: Bryan HUANG (bryan@esse.io)
 #
 #
+
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+
+# from django.forms.widgets import flatatt
+
+
+class Nav:
+	
