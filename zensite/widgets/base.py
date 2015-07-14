@@ -15,7 +15,9 @@ from django.forms.widgets import Widget
 from django.utils.html import conditional_escape, format_html, html_safe
 
 class ZenWidget(Widget):
-    sub_widgets = []
+    """
+    Base zen web widget class
+    """
     id = ""
     element_name = ""
     text = ""
@@ -31,6 +33,7 @@ class ZenWidget(Widget):
         self.element_name = element_name
         if name:
             self.name = name
+        self.sub_widgets = []
 
     def append_text(self, text):
         self.text = text
@@ -46,19 +49,13 @@ class ZenWidget(Widget):
         final_attrs = self.build_attrs(self.attrs)
         html = "<{}".format(self.element_name)
         html = html + "{}>\n"
-        if self.text:
-            html = html + self.text 
-        elif self.extra_appending():
-            extra = self.extra_appending()
-            if extra:
-                html += extra.render()
-            if self.sub_widgets:
-                for widget in self.sub_widgets:
-                    html += widget.render()
-        elif self.sub_widgets:
+        if self.sub_widgets:
             for widget in self.sub_widgets:
                 html += widget.render()
-        html = html + "\n</{}>".format(self.element_name)
+        if self.text:
+            html += self.text
+            html += "\n" 
+        html = html + "</{}>\n".format(self.element_name)
         return format_html(html, flatatt(self.attrs))
 
     def end_html(self):
@@ -66,6 +63,9 @@ class ZenWidget(Widget):
 
     def extra_appending(self):
         return None
+
+    def get_element_name(self):
+        return self.element_name
 
 if __name__ == "__main__":
     zw = ZenWidget("div", {"class": "test", "width": "100%"}, "testid", "test")

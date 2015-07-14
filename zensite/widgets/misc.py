@@ -13,16 +13,17 @@ from __future__ import unicode_literals
 # from django.forms.widgets import flatatt
 
 
-def render_logo(href, mini_logo_highlight, mini_logo, lg_logo_highlight, lg_logo):
+def render_logo(href, mini_logo_highlight, mini_logo,
+	            lg_logo_highlight, lg_logo):
 	logo_html = """
-	    <!-- Logo -->
-        <a href='{href}' class='logo'>
-          <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class='logo-mini'><b>{mini_logo_highlight}</b>{mini_logo}</span>
-          <!-- logo for regular state and mobile devices -->
-          <span class='logo-lg'><b>{lg_logo_highlight}</b>&nbsp;{lg_logo}</span>
-        </a>
-        """
+    <!-- Logo -->
+    <a href='{href}' class='logo'>
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class='logo-mini'><b>{mini_logo_highlight}</b>{mini_logo}</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class='logo-lg'><b>{lg_logo_highlight}</b>&nbsp;{lg_logo}</span>
+    </a>
+    """
 
 	return logo_html.format(
     	href=href,
