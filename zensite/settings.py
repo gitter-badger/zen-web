@@ -127,3 +127,11 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     #'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
+
+SESSION_COOKIE_SECURE = True
+
+SESSION_COOKIE_NAME = "zen_session_id"
+
+SESSION_COOKIE_HTTPONLY = True
