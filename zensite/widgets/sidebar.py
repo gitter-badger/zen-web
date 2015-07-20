@@ -24,8 +24,9 @@ class SideBar(ZenWidget):
         super(self.__class__, self).__init__("aside",
                                              {"class": "main-sidebar"})
         self.section = ZenWidget("section", {"class": "sidebar"})
-        self.append_widget
-        self.user_info=user_info
+        self.user_info = user_info
+        if not self.user_info:
+            self.user_info = {}
         self.sidebar_menu = ZenWidget("ul", {"class": "sidebar-menu"})
         self.menu_items = []
 
@@ -64,3 +65,8 @@ class SideBar(ZenWidget):
         self.append_widget(self.section)
         self.section.append_widget(self.sidebar_menu)
         return super(self.__class__, self).render()
+
+
+def create_sidebar(user_info=None):
+    sidebar = SideBar(user_info)
+    return sidebar

@@ -106,6 +106,12 @@ class Nav(ZenWidget):
         self.nav_div.append_widget(widget)
 
 
+dev create_navbar():
+    nav = Nav()
+    # todo
+    return nav
+
+
 if __name__ == "__main__":
     nav = Nav()
     nav.append_nav_widget(NavDropdownMenu("messages-menu", nav_dd_envelope_icon("1")))

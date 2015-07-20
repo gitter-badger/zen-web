@@ -12,6 +12,10 @@ from django.template import Context
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
 
+
+@require_http_methods(["GET"])
+@require_awsome_browser
+@clear_dirty_lang
 def display_dashboard(request):
 	if request.user.is_authenticated:
 		context = Context({
