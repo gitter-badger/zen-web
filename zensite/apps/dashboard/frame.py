@@ -29,7 +29,7 @@ class Frame:
 
     def __init__(self, components=[NAVBAR, SIDEBAR]):
         if NAVBAR in components:
-            self._navbar = navbar()
+            self._navbar = create_navbar()
         if SIDEBAR in components:
             self._sidebar = create_sidebar()
         self._content_wrapper = ContentWrapper()

@@ -22,6 +22,7 @@ class ZenWidget(Widget):
     element_name = ""
     text = ""
     name = ""
+    inner_html = ""
 
     def __init__(self, element_name, attrs=None, id=None, name=None):
         if id:
@@ -35,8 +36,12 @@ class ZenWidget(Widget):
             self.name = name
         self.sub_widgets = []
 
+
     def append_text(self, text):
         self.text = text
+
+    def append_html(self, html):
+        self.inner_html = html
 
     def append_widget(self, widget):
         self.sub_widgets.append(widget)

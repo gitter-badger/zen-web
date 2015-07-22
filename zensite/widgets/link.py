@@ -56,7 +56,7 @@ class LinkItem(ZenWidget):
     def render(self):
         if self.link:
             self.append_widget(self.link)
-            if self.icon
+            if self.icon:
                 self.link.append_widget(self.icon)
                 if self.span:
                     self.icon.append_widget(self.span)

@@ -106,7 +106,7 @@ class Nav(ZenWidget):
         self.nav_div.append_widget(widget)
 
 
-dev create_navbar():
+def create_navbar():
     nav = Nav()
     # todo
     return nav
