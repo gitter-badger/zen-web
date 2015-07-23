@@ -18,9 +18,10 @@ class ContentWrapper(ZenWidget):
     _content_header = None
     _content = None
 
-    def __init__(self):
+    def __init__(self, id='content_wrapper_div'):
         super(self.__class__, self).__init__("div",
-                                             {"class": "content-wrapper"})
+                                             {"class": "content-wrapper"},
+                                             id)
 
     def set_content_header(self, content_header):
         self._content_header = content_header

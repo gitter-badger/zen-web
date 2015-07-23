@@ -40,6 +40,10 @@ class Link(ZenWidget):
 
 
 class LinkItem(ZenWidget):
+    link = None
+    icon = None
+    icon1 = None
+    span = None
     def __init__(self, li_class):
         super(self.__class__, self).__init__("li", {"class": li_class})
 
@@ -50,6 +54,9 @@ class LinkItem(ZenWidget):
     def set_icon(self, css_classes=""):
         self.icon = Icon(css_classes)
 
+    def set_icon1(self, css_classes=""):
+        self.icon1 = Icon(css_classes)
+
     def set_span(self, css_classes="", text=""):
         self.span = Span(css_classes, text)
 
@@ -58,9 +65,19 @@ class LinkItem(ZenWidget):
             self.append_widget(self.link)
             if self.icon:
                 self.link.append_widget(self.icon)
-                if self.span:
-                    self.icon.append_widget(self.span)
+            if self.span:
+                self.link.append_widget(self.span)
+            if self.icon1:
+                self.link.append_widget(self.icon1)
         return super(self.__class__, self).render()
+
+
+class TreeTitle(ZenWidget):
+    def __init__(self, text, i1_class="fa fa-link", i2_class="fa fa-angle-left pull-right"):
+        super(self.__class__, self).__init__("a")
+        self.append_widget(Icon(i1_class))
+        self.append_widget(Span("", text))
+        self.append_widget(Icon(i2_class))
 
 
 class TreeViewMenu(ZenWidget):

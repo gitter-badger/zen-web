@@ -72,6 +72,10 @@ class ZenWidget(Widget):
     def get_element_name(self):
         return self.element_name
 
+    def get_element_id(self):
+        return self.id
+
+
 if __name__ == "__main__":
     zw = ZenWidget("div", {"class": "test", "width": "100%"}, "testid", "test")
     print zw.render()

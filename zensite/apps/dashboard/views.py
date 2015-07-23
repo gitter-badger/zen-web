@@ -8,6 +8,7 @@
 #
 
 from django.template.loader import get_template
+from django import template
 from django.template import Context
 from django.http import HttpResponse
 from django.views.decorators.http import require_http_methods
@@ -28,17 +29,19 @@ def display_dashboard(request):
 			"zen_frame": frame,
 			"logo_html": logo_html,
 			})
-		header_t = get_template('header.html')
-		header_html = header_t.render(context)
 
-		t = get_template('dashboard.html')
-		html = t.render(context)
+		#header_t = get_template('header.html')
+		#header_html = header_t.render(context)
 
-		footer_t = get_template('footer.html')
-		footer_html = footer_t.render(context)
-		return HttpResponse(header_html + html + footer_html)
-		#return render_to_response('frame.html', context,
-		#	                      content_type="application/xhtml+xml")
+		#t = get_template('dashboard.html')
+		#html = t.render(context)
+
+		#footer_t = get_template('footer.html')
+		#footer_html = footer_t.render(context)
+		#return HttpResponse(header_html + html + footer_html)
+		return render_to_response('frame.html', context,
+								  content_type="text/html")
 	else:
 		return render_to_response('/login', {},
-        						  content_type="application/xhtml+xml")
+        						  content_type="text/html")
+

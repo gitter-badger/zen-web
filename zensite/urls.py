@@ -39,7 +39,11 @@ from django.contrib import admin
 urlpatterns = [
     # url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'zensite.apps.dashboard.views.display_dashboard'),
-    url(r'^dashboard/', 'zensite.apps.dashboard.views.display_dashboard'),
+    url(r'^dashboard/?', include('zensite.apps.dashboard.urls')),
     url(r'^login/?', include('zensite.apps.sessions.login.urls')),
     url(r'^register/?', include('zensite.apps.sessions.register.urls')),
+    url(r'^el/?', include('zensite.apps.el.urls')),
 ]
+
+#TODO: search apps folder find all urls.py and append to urlpatterns
+

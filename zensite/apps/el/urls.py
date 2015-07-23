@@ -9,7 +9,7 @@
 
 from django.conf.urls import patterns, url
 
-urlpatterns = patterns('zensite.apps.dashboard.views',
-    url(r'^$', 'display_dashboard'),
-    url(r'^dashboard/$', 'display_dashboard'),
+
+urlpatterns = patterns('zensite.apps.el.views',
+    url(r'^$', 'el_dashboard'),
 )
